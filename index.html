@@ -18,26 +18,31 @@
       <img class="article-component__img" src="./images/drawers.jpg" alt="Small piece of furniture containing frames and a flowerpot">
       
       <div class="content-wrapper">
-        <h2 class="article-component__title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
-        <p class="article-component__description">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+        <section class="article-component__central-content">
+          <h2 class="article-component__title">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+          <p class="article-component__description">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple tips to help you make any room feel complete.</p>
+        </section>
 
-        <footer class="article-component__footer">
-          <img class="author-img" src="./images/avatar-michelle.jpg" alt="">
-          <div>
-            <span class="article-component__param article-component__param--author">Michelle Appleton</span>
-            <span class="article-component__param article-component__param--pub-date">28 Jun 2020</span>
-          </div>
-          <button class="article-component__btn" aria-label="Share on social media" type="button">
-            <img src="./images/icon-share.svg" alt="">
-          </button>
-        </footer>
+        <div id="footer-container">
+          <footer id="article-footer" class="article-component__footer">
+            <img class="author-img" src="./images/avatar-michelle.jpg" alt="">
+            <div>
+              <span class="article-component__indicator article-component__indicator--author">Michelle Appleton</span>
+              <span class="article-component__indicator article-component__indicator--pub-date">28 Jun 2020</span>
+            </div>
+            <span class="article-component__indicator article-component__indicator--share-state">share</span>
+            <button class="article-component__btn article-component__btn--facebook" aria-label="Share on facebook" type="button"><img src="./images/icon-facebook.svg" alt=""></button>
+            <button class="article-component__btn article-component__btn--twitter" aria-label="Share on twitter" type="button"><img src="./images/icon-twitter.svg" alt=""></button>
+            <button class="article-component__btn article-component__btn--pinterest" aria-label="Share on pinterest" type="button"><img src="./images/icon-pinterest.svg" alt=""></button>
+            <button class="article-component__btn article-component__btn--share" aria-label="Share on social media" type="button"><img src="./images/icon-share.svg" alt=""></button>
+          </footer>
+        </div>
       </div>
-
     </article>
   </main>
   <footer class="attribution">
     Challenge by <a referrerpolicy="no-referrer" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a rel="author" referrerpolicy="no-referrer" href="#">Your Name Here</a>.
+    Coded by <a rel="author" referrerpolicy="no-referrerbutton" href="#">Your Name Here</a>.
   </footer>
 </body>
 </html>
