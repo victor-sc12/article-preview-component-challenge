@@ -62,14 +62,11 @@ body {
 }
 
 .content-wrapper {
-    width: 81.65%;
-    margin-inline: auto;
-    padding-block: 1.875em 1.125em;
+    padding-block-start: 1.875em;
+    /* outline: red solid .1em; */
 }
 
-@media (min-width: 48em) {
-    .content-wrapper {width: 50.576%;}
-}
+.article-component__central-content{width: 81.65%; margin-inline: auto;}
 
 .article-component__title {
     font-size: 1.25rem;
@@ -81,36 +78,60 @@ body {
 .article-component__description {
     font-size: .8125rem;
     color: var(--desaturated-dark-blue);
-    margin-block: 1.846em clamp(1.846em, 3.5em - 2vw, 3.69em);
+    margin-block: .4615em clamp(.4615em, 2em - 2vw, 2.3077em);
 }
 
+.footer-wrapper {background-color: var(--very-dark-grayish-blue); border-radius: 0 0 10px 10px;}
+
 .article-component__footer {
+    width: 81.65%; 
+    margin-inline: auto;
+    padding-block: clamp(.875em, 2em - 2.5vw, 1.125em);
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     gap: 1em;
     flex-wrap: wrap;
 }
 
 .author-img {width: 2.5em; border-radius: 60%;}
 
-.article-component__param {display: block; font-size: .8125rem;}
-.article-component__param--author {color: var(--very-dark-grayish-blue); font-weight: 700;}
-.article-component__param--pub-date {color: var(--grayish-blue);}
+.article-component__indicator {display: block; font-size: .8125rem;}
+.article-component__indicator--author {color: var(--very-dark-grayish-blue); font-weight: 700;}
+.article-component__indicator--pub-date {color: var(--grayish-blue);}
+.article-component__indicator--share-state {
+    display: none;
+    color: var(--grayish-blue); 
+    font-size: .8125rem; 
+    letter-spacing: 35%; 
+    text-transform: uppercase;
+    margin-inline-end: .6154em;
+}
 
 .article-component__btn {
-    border-radius: 60%;
-    margin-left: auto;
-    padding: .5em;
     border: none;  
-    background-color: var(--light-grayish-blue);
     cursor: pointer;
-        
+    background-color: inherit;
+    padding: 0%;
+    margin: 0%;
+}
+
+.article-component__btn--facebook,
+.article-component__btn--twitter,
+.article-component__btn--pinterest{display: none;}
+
+.article-component__btn--share {
+    border-radius: 60%;
+    padding: .5em;
+    background-color: var(--light-grayish-blue);
+    margin-left: auto;    
+    
     &:focus-visible {
         outline: .1em solid hsl(0 0 0 / 60%);
         background-color: hsl(217 19% 35% / 15%);
     }
 }
+
+.article-component__btn--share-activated {background-color: var(--desaturated-dark-blue);}
 
 .attribution { font-size: 0.6875rem; text-align: center; margin-block-start: .4545em;}
 .attribution a { color: hsl(228 45% 44%); }
