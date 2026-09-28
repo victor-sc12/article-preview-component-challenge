@@ -1,26 +1,19 @@
 const articleFooter = document.getElementById("article-footer");
-const shareButton = articleFooter.querySelector(".article-component__btn--share")
+const footrCtntWrpr = articleFooter.querySelector(".footer-content-wrapper");
+const shareButton = footrCtntWrpr.querySelector(".article-component__btn--share");
 
 shareButton.addEventListener("click", function () {
-    const footerWrapper = document.getElementById("footer-container");
     const shareButtonImage = shareButton.querySelector("img");
-    
-    footerWrapper.classList.toggle("footer-wrapper");
+    const shareOptsSection = footrCtntWrpr.querySelector("#article-share-opts");
+
+    articleFooter.classList.toggle("article-component__footer--share-state-bg");
     shareButton.classList.toggle("article-component__btn--share-activated");
-    
+    shareOptsSection.toggleAttribute("hidden");
+    shareOptsSection.classList.toggle("article-component__share-opts");
+
     if (shareButton.classList.contains("article-component__btn--share-activated")) {
-        shareButtonImage.setAttribute("src", "./images/icon-share-white.svg")
+        shareButtonImage.setAttribute("src", "./images/icon-share-white.svg");
     } else {
-        shareButtonImage.setAttribute("src", "./images/icon-share.svg")
-    }
-
-    for (const element of articleFooter.children) {
-        if (element === shareButton) continue;
-
-        if (getComputedStyle(element).getPropertyValue("display") === "none"){
-            element.style.setProperty("display", "initial");
-        } else {
-            element.style.setProperty("display", "none");
-        }
+        shareButtonImage.setAttribute("src", "./images/icon-share.svg");
     }
 });
