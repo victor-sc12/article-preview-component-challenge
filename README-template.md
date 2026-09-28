@@ -15,9 +15,6 @@ This is a solution to the [Article preview component challenge on Frontend Mento
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,15 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./images/screenshot.jpg)
 
 ### Links
 
@@ -51,72 +40,65 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Semantic HTML5 markup
 - CSS custom properties
+- BEM Naming Convention
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JavaScript
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+One of the main things I learned during this project was how to use **CSS anchor positioning** to position an element relative to another element. I used an anchor to position the social media sharing options relative to the share button, which allowed me to reproduce the intended layout without relying entirely on traditional positioning techniques.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.article-component__share-opts {
+  position-anchor: --share-btn;
+  bottom: anchor(top);
+  left: anchor(center);
+  transform: translateX(-50%);
 }
 ```
+
+Another important learning was **JavaScript and DOM manipulation**. This was my first Frontend Mentor challenge involving JavaScript, so completing the entire script was an important milestone for me. Although the script is relatively small, it helped me practice fundamental concepts such as event handling, variable declaration and initialization, DOM selection, and the use of properties and methods to modify elements dynamically.
+
+For example, I used a `click` event listener to change the share button state, show or hide the sharing options, and update the button icon:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+shareButton.addEventListener("click", function () {
+  const shareOptsSection = footrCtntWrpr.querySelector("#article-share-opts");
+
+  shareOptsSection.toggleAttribute("hidden");
+  shareOptsSection.classList.toggle("article-component__share-opts");
+});
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Working through this interaction also helped me understand how JavaScript can control the **state of an interface**, while CSS remains responsible for defining how that state is visually represented.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+One area I would like to continue improving is the use of **good implementation practices when combining HTML, CSS, and JavaScript**. I found it challenging to achieve the desired interactive behavior without mixing responsibilities between JavaScript and CSS, and this sometimes made my implementation more complicated than necessary.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I also noticed that my CSS grew to around **200 lines** for a relatively small project. While it works as intended, I feel that the resulting structure could be difficult to maintain or extend.
+
+In future projects, I would like to explore and apply different approaches and methodologies that help me establish clearer responsibilities between HTML, CSS, and JavaScript, while also keeping my CSS more organized, maintainable, and appropriate for the size of the project.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [**CSS Dialog Boxes: A Comprehensive Guide and Examples for All Arrow Directions**](https://uipencil.com/2023/02/20/creating-css-bubble-dialog-boxes-with-arrow-styling-a-complete-guide-with-examples-for-all-arrow-directions/) - An article written on [**UIPENCIL**](https://uipencil.com/) that demonstrates how to implement box layouts with arrow directions. It was used to define the box layout for the sharing options on desktop devices.
+- [**CSS Anchor Position**](https://lenguajecss.com/css/posicionamiento/anchor-position/) - An article from manz.dev that explains how to define and use anchor positioning, illustrating the necessary properties with practical examples. It was used to define the layout of the share options for both mobile and desktop versions.
+- [**DOM**](https://lenguajejs.com/dom/) - An entire section on manz.dev dedicated to the DOM. It explains how to manage the objects that make up the DOM using JavaScript. The topics covered in this section were extremely helpful in understanding how certain objects, properties, and methods work and are used. 
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+I used **ChatGPT** throughout the development of this project as a learning and problem-solving assistant.
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+One of the main ways it helped me was by reviewing my approach to combining **CSS and JavaScript responsibilities**. Through these discussions, I was able to better understand which parts of the interface should be handled by CSS and which should be controlled by JavaScript, as well as identify areas where I was making the implementation more complicated than necessary.
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+ChatGPT also helped me understand **CSS stacking contexts and the use of `z-index`**, which was particularly useful when working with the different layers of the share interaction.
+
+Finally, I used ChatGPT to help me **review and refine the documentation for this project**, including the writing of this README.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- **Name** - Víctor Suquilanda
+- **Frontend Mentor** - [@victor-sc12](https://www.frontendmentor.io/profile/victor-sc12)
+- **GitHub** - [@victor-sc12](https://github.com/victor-sc12)
