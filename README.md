@@ -1,107 +1,104 @@
-# Frontend Mentor - Article preview component
+# Frontend Mentor - Article preview component solution
 
-![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Article preview component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI Collaboration](#ai-collaboration)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and a tiny bit of JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this article preview component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-The only JavaScript you'll need for this challenge is to initiate the share options when someone clicks the share icon.
-
-Your users should be able to: 
+Users should be able to:
 
 - View the optimal layout for the component depending on their device's screen size
 - See the social media share links when they click the share icon
 
-### Want some support on the challenge? 
+### Screenshot
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+![](./images/screenshot.jpg)
 
-## Where to find everything
+### Links
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+## My process
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Built with
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+- Semantic HTML5 markup
+- CSS custom properties
+- BEM Naming Convention
+- Flexbox
+- Mobile-first workflow
+- JavaScript
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### What I learned
 
-## Using AI coding assistants
+One of the main things I learned during this project was how to use **CSS anchor positioning** to position an element relative to another element. I used an anchor to position the social media sharing options relative to the share button, which allowed me to reproduce the intended layout without relying entirely on traditional positioning techniques.
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+```css
+.article-component__share-opts {
+  position-anchor: --share-btn;
+  bottom: anchor(top);
+  left: anchor(center);
+  transform: translateX(-50%);
+}
+```
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+Another important learning was **JavaScript and DOM manipulation**. This was my first Frontend Mentor challenge involving JavaScript, so completing the entire script was an important milestone for me. Although the script is relatively small, it helped me practice fundamental concepts such as event handling, variable declaration and initialization, DOM selection, and the use of properties and methods to modify elements dynamically.
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+For example, I used a `click` event listener to change the share button state, show or hide the sharing options, and update the button icon:
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+```js
+shareButton.addEventListener("click", function () {
+  const shareOptsSection = footrCtntWrpr.querySelector("#article-share-opts");
 
-## Building your project
+  shareOptsSection.toggleAttribute("hidden");
+  shareOptsSection.classList.toggle("article-component__share-opts");
+});
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+Working through this interaction also helped me understand how JavaScript can control the **state of an interface**, while CSS remains responsible for defining how that state is visually represented.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+### Continued development
 
-## Deploying your project
+One area I would like to continue improving is the use of **good implementation practices when combining HTML, CSS, and JavaScript**. I found it challenging to achieve the desired interactive behavior without mixing responsibilities between JavaScript and CSS, and this sometimes made my implementation more complicated than necessary.
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+I also noticed that my CSS grew to around **200 lines** for a relatively small project. While it works as intended, I feel that the resulting structure could be difficult to maintain or extend.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+In future projects, I would like to explore and apply different approaches and methodologies that help me establish clearer responsibilities between HTML, CSS, and JavaScript, while also keeping my CSS more organized, maintainable, and appropriate for the size of the project.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+### Useful resources
 
-## Create a custom `README.md`
+- [**CSS Dialog Boxes: A Comprehensive Guide and Examples for All Arrow Directions**](https://uipencil.com/2023/02/20/creating-css-bubble-dialog-boxes-with-arrow-styling-a-complete-guide-with-examples-for-all-arrow-directions/) - An article written on [**UIPENCIL**](https://uipencil.com/) that demonstrates how to implement box layouts with arrow directions. It was used to define the box layout for the sharing options on desktop devices.
+- [**CSS Anchor Position**](https://lenguajecss.com/css/posicionamiento/anchor-position/) - An article from manz.dev that explains how to define and use anchor positioning, illustrating the necessary properties with practical examples. It was used to define the layout of the share options for both mobile and desktop versions.
+- [**DOM**](https://lenguajejs.com/dom/) - An entire section on manz.dev dedicated to the DOM. It explains how to manage the objects that make up the DOM using JavaScript. The topics covered in this section were extremely helpful in understanding how certain objects, properties, and methods work and are used. 
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+### AI Collaboration
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+I used **ChatGPT** throughout the development of this project as a learning and problem-solving assistant.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+One of the main ways it helped me was by reviewing my approach to combining **CSS and JavaScript responsibilities**. Through these discussions, I was able to better understand which parts of the interface should be handled by CSS and which should be controlled by JavaScript, as well as identify areas where I was making the implementation more complicated than necessary.
 
-## Submitting your solution
+ChatGPT also helped me understand **CSS stacking contexts and the use of `z-index`**, which was particularly useful when working with the different layers of the share interaction.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+Finally, I used ChatGPT to help me **review and refine the documentation for this project**, including the writing of this README.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+## Author
 
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- **Name** - Víctor Suquilanda
+- **Frontend Mentor** - [@victor-sc12](https://www.frontendmentor.io/profile/victor-sc12)
+- **GitHub** - [@victor-sc12](https://github.com/victor-sc12)
