@@ -30,7 +30,9 @@ body {
     font-weight: 500;
     font-style: normal;
     min-height: 100dvh;
-    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .article-component {
@@ -61,10 +63,7 @@ body {
     }
 }
 
-.content-wrapper {
-    padding-block-start: 1.875em;
-    /* outline: red solid .1em; */
-}
+.content-wrapper {padding-block-start: 1.875em;}
 
 .article-component__central-content{width: 81.65%; margin-inline: auto;}
 
@@ -98,7 +97,6 @@ body {
 }
 
 .article-component__author-info {
-    /* outline: solid .1em blueviolet; */
     padding-inline-end: .5em;
     display: flex;
     align-items: center;
@@ -115,7 +113,6 @@ body {
 .article-component__indicator--pub-date {color: var(--grayish-blue);}
 
 .article-component__share-opts {
-    /* outline: solid red .1em; */
     background-color: var(--very-dark-grayish-blue);
     display: flex;
     align-items: center;
@@ -162,20 +159,19 @@ body {
     display: block;
     color: var(--grayish-blue); 
     font-size: .8125rem; 
-    letter-spacing: 35%; 
+    letter-spacing: .269em; 
     text-transform: uppercase;
 }
 
 .article-component__btn {
-    outline: none;
-    border: none;  
+    border: none;
     cursor: pointer;
     background-color: inherit;
     padding: 0%;
     margin: 0%;
     anchor-name: --share-btn;
 
-    &:focus-visible {outline: solid black .15em;}
+    &:focus-visible {outline-offset: 3px;}
 }
 
 .article-component__btn--share {
@@ -184,7 +180,16 @@ body {
     background-color: var(--light-grayish-blue);
 }
 
+@media (hover: hover) {
+    .article-component__btn--share:hover {background-color: var(--desaturated-dark-blue);}
+    .article-component__btn--share:hover .share-icon path {fill: var(--white);} 
+}
+
+.article-component__btn--share:focus-visible {background-color: var(--desaturated-dark-blue);}
+.article-component__btn--share:focus-visible .share-icon path {fill: var(--white);} 
+
 .article-component__btn--share-activated {background-color: var(--desaturated-dark-blue);}
+.activated-shape {fill: var(--white);}
 
 .attribution { font-size: 0.6875rem; text-align: center; margin-block-start: .4545em;}
 .attribution a { color: hsl(228 45% 44%); }
